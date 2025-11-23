@@ -36,10 +36,10 @@ foreach ($wbPath in $Workbooks) {
     if ($wb.FileFormat -ne 52) {
         $xlsmPath = [System.IO.Path]::ChangeExtension($wbFullPath, ".xlsm")
         Write-Host "Converting to macro-enabled workbook: $xlsmPath"
-        $wb.SaveAs((Resolve-Path $xlsmPath).Path, 52)
+        $wb.SaveAs($xlsmPath, 52)
         $wb.Close($true)
-        $wb = $excel.Workbooks.Open((Resolve-Path $xlsmPath).Path)
-        $wbFullPath = (Resolve-Path $xlsmPath).Path
+        $wb = $excel.Workbooks.Open($xlsmPath)
+        $wbFullPath = $xlsmPath
     }
 
     try {
