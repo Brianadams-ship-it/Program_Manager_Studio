@@ -1,0 +1,161 @@
+
+/* Optimum Upgrade - Unified Site Styles */
+
+:root {
+  --primary: #0057A0;
+  --primary-light: #0093D5;
+  --text-main: #1C1C1C;
+  --bg-main: #FFFFFF;
+  --bg-soft: #F4F9FF;
+  --border-soft: #E0E0E0;
+  --font-main: "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  color: var(--text-main);
+  background: var(--bg-main);
+  line-height: 1.5;
+}
+
+header {
+  background: var(--primary);
+  color: #FFFFFF;
+  padding: 16px 24px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header-inner h1 {
+  margin: 0 0 4px 0;
+  font-size: 1.6rem;
+}
+
+header nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-right: 16px;
+  font-size: 0.95rem;
+}
+
+header nav a:last-child {
+  margin-right: 0;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+.site-logo {
+  height: 40px;
+  max-width: 140px;
+}
+
+main {
+  max-width: 1100px;
+  margin: 24px auto 40px;
+  padding: 0 16px;
+}
+
+h1, h2, h3 {
+  color: var(--primary);
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 4px;
+  margin-top: 32px;
+}
+
+p {
+  margin: 8px 0 12px;
+}
+
+ul, ol {
+  margin: 8px 0 16px 24px;
+}
+
+.card,
+.card-list > li {
+  background: var(--bg-soft);
+  border-radius: 6px;
+  border: 1px solid var(--border-soft);
+  padding: 16px 18px;
+  margin: 12px 0;
+}
+
+.card-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.card-list > li + li {
+  margin-top: 10px;
+}
+
+pre, code {
+  font-family: Consolas, "Courier New", monospace;
+}
+
+pre {
+  background: #F2F2F2;
+  padding: 10px 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+code {
+  background: #F2F2F2;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.button-primary {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 4px;
+  background: var(--primary);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.button-primary:hover {
+  background: var(--primary-light);
+}
+
+footer {
+  margin-top: 40px;
+  padding: 16px 24px;
+  background: #F6F6F6;
+  color: #555555;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Simple responsive behavior */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  main {
+    padding: 0 12px;
+  }
+}

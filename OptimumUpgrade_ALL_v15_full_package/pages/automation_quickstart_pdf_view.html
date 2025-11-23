@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Automation Quick Start – PDF View</title>
+<link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div>
+      <h1>Automation Quick Start – PDF View</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="automation_hub.html">Automation Hub</a>
+        <a href="docs_index.html">Docs Index</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main>
+
+<div class="card">
+  <h2>About This Page</h2>
+  <p>
+    This page provides a quick inline view of the Automation Quick Start Guide content.
+    For the full formatted document, open the original PDF:
+    <a href="/mnt/data/Automation_QuickStart_Guide.pdf">Automation_QuickStart_Guide.pdf</a>.
+  </p>
+</div>
+
+<h2 class="section-title">Extracted Text (Preview)</h2>
+<div class="card">
+  <pre>Optimum Upgrade – Automation Quick Start Guide
+What This Guide Covers
+– How to enable Excel automation
+– How to import the Optimum Upgrade VBA module
+– How to use the automation macros
+– Recommended workflow for PM/SE/Test teams
+1. Requirements
+To use the automation features, ensure:
+– Windows + Excel installed
+– Excel Trust Center: “Trust access to the VBA project object model” enabled
+– Macros allowed for the workbook
+2. Importing the Automation (VBA Module)
+Use the included import_vba.ps1 script:
+1. Open PowerShell
+2. Navigate to the automation folder
+3. Run: .\import_vba.ps1
+The script converts workbooks to .xlsm (if needed) and injects the automation module.
+3. Using the Automation Macros
+
+Once imported, the workbook offers these macros:
+– GenerateTestCasesFromRequirements
+– BuildVerificationSummary
+– ExportVerificationSummaryCSV
+– EnsureProjectInfoSheet
+– UpdateSheetHeadersFromProjectInfo
+4. Recommended Workflow
+1. Create or import requirements into the Requirements sheet
+2. Run GenerateTestCasesFromRequirements
+3. Run BuildVerificationSummary
+4. Export CSV for reporting if needed
+5. Use ProjectInfo sheet to keep project metadata consistent
+5. Control Panel (Optional)
+Use Automation_ControlPanel_Template.xlsx to copy a ControlPanel sheet into your workbook. Add
+buttons and assign them to the macros for a click-based interface.
+You're ready to automate your PM/SE workflows with Optimum Upgrade!
+
+</pre>
+</div>
+
+</main>
+<footer>
+  Optimum Upgrade – Automation Quick Start (PDF-backed)
+</footer>
+</body>
+</html>

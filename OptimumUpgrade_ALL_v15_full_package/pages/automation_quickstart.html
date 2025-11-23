@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Optimum Upgrade – Automation Quick Start Guide</title>
+<link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <h1>Optimum Upgrade – Automation Quick Start Guide</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="automation_hub.html">Automation Hub</a>
+        <a href="sample_project_portal.html">Sample Project</a>
+      </nav>
+    </div>
+    <img src="../images/branding/logo_primary.png" alt="Optimum Upgrade logo" class="site-logo">
+  </div>
+</header>
+
+<main>
+
+<div class="card">
+  <p><b>This guide explains how to enable automation inside your Excel-based PM/SE toolkits, add the Control Panel, and run one-click verification workflows.</b></p>
+</div>
+
+<h2 class="section-title">1. Requirements</h2>
+<ul class="card-list">
+  <li>Windows with Microsoft Excel installed</li>
+  <li>Macro-enabled workbook (.xlsm)</li>
+  <li>Excel Trust Center → Check “Trust access to the VBA project object model”</li>
+</ul>
+
+<h2 class="section-title">2. Importing the Automation Module</h2>
+<p>Use the included PowerShell script:</p>
+
+<pre>
+cd C:\OptimumUpgrade_Site\automation
+.\import_vba.ps1
+</pre>
+
+<p>The script will:</p>
+<ul class="card-list">
+  <li>Convert workbooks to <code>.xlsm</code> if needed</li>
+  <li>Inject the <code>OptimumUpgrade_Automation.bas</code> module</li>
+  <li>Save and close the workbook automatically</li>
+</ul>
+
+<h2 class="section-title">3. Automation Macros</h2>
+<ul class="card-list">
+  <li><b>GenerateTestCasesFromRequirements</b> – Auto-builds Test Cases from the Requirements sheet.</li>
+  <li><b>BuildVerificationSummary</b> – Creates or refreshes a VerificationSummary sheet.</li>
+  <li><b>ExportVerificationSummaryCSV</b> – Exports the VerificationSummary as CSV.</li>
+  <li><b>EnsureProjectInfoSheet</b> – Creates the ProjectInfo sheet with standard fields.</li>
+  <li><b>UpdateSheetHeadersFromProjectInfo</b> – Updates sheet headers with project metadata.</li>
+</ul>
+
+<h2 class="section-title">4. Recommended Workflow</h2>
+<ol>
+  <li>Enter or import Requirements.</li>
+  <li>Run <i>Generate Test Cases</i>.</li>
+  <li>Run <i>Build Verification Summary</i>.</li>
+  <li>Export Verification Summary (optional) using CSV.</li>
+  <li>Use ProjectInfo sheet to set Program Name, Acronym, Customer, and Contract.</li>
+</ol>
+
+<h2 class="section-title">5. Control Panel (Optional)</h2>
+<p>You may copy the ControlPanel sheet from <code>Automation_ControlPanel_Template.xlsx</code> into any automation-enabled workbook and add buttons mapped to the macros.</p>
+
+</main>
+
+<footer>
+  Optimum Upgrade – Automation-Enabled PM &amp; Verification Toolkits
+</footer>
+
+</body>
+</html>

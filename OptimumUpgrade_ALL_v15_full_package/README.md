@@ -79,9 +79,3 @@ zip -r OptimumUpgrade_ALL_latest.zip . \
 
 For customization, consulting, or building advanced PM/verification systems:  
 **Optimum Upgrade – AI-Powered Engineering & Program Tools**
-
----
-
-## Automation
-
-Automation helpers (VBA module + importer) are included in the `automation/` folder. See `automation/AUTOMATION_README.md` for instructions to inject `OptimumUpgrade_Automation.bas` into your workbooks using `import_vba.ps1` and for guidance on the `Automation_ControlPanel_Template.xlsx`.
