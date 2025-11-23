@@ -174,6 +174,7 @@ Public Sub Install_Automation()
     On Error Resume Next
     Call CreateProjectInfoIfMissing
     ' Add other silent initialization steps here if required
+    Call CreateControlPanelIfMissing
 End Sub
 
 Private Sub CreateProjectInfoIfMissing()
@@ -211,6 +212,23 @@ Private Sub CreateProjectInfoIfMissing()
     Next i
 
     ws.Columns("A:B").AutoFit
+End Sub
+
+Private Sub CreateControlPanelIfMissing()
+    Dim ws As Worksheet
+    On Error Resume Next
+    Set ws = ThisWorkbook.Worksheets("ControlPanel")
+    On Error GoTo 0
+
+    If Not ws Is Nothing Then Exit Sub
+
+    Set ws = ThisWorkbook.Worksheets.Add(After:=ThisWorkbook.Worksheets(ThisWorkbook.Worksheets.Count))
+    ws.Name = "ControlPanel"
+
+    ws.Range("A1").Value = "Automation Control Panel"
+    ws.Range("A2").Value = "Run Install_Automation to configure project defaults." 
+    ws.Range("A1:A2").Font.Bold = True
+    ws.Columns("A").ColumnWidth = 50
 End Sub
 
 Public Sub EnsureProjectInfoSheet()
