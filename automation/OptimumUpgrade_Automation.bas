@@ -169,6 +169,50 @@ End Sub
 '  Project Info Automation
 ' =============================
 
+' Minimal silent install helper called by Workbook_Open
+Public Sub Install_Automation()
+    On Error Resume Next
+    Call CreateProjectInfoIfMissing
+    ' Add other silent initialization steps here if required
+End Sub
+
+Private Sub CreateProjectInfoIfMissing()
+    Dim ws As Worksheet
+    Dim tbl As Variant
+    Dim i As Long
+
+    On Error Resume Next
+    Set ws = ThisWorkbook.Worksheets("ProjectInfo")
+    On Error GoTo 0
+
+    If Not ws Is Nothing Then Exit Sub
+
+    Set ws = ThisWorkbook.Worksheets.Add(Before:=ThisWorkbook.Worksheets(1))
+    ws.Name = "ProjectInfo"
+
+    ws.Range("A1").Value = "Field"
+    ws.Range("B1").Value = "Value"
+
+    tbl = Array( _
+        "ProjectName", _
+        "ProjectAcronym", _
+        "Customer", _
+        "ContractNumber", _
+        "ProgramID", _
+        "PMName", _
+        "SELead", _
+        "StartDate", _
+        "EndDate" _
+    )
+
+    For i = LBound(tbl) To UBound(tbl)
+        ws.Cells(i + 2, "A").Value = tbl(i)
+        ws.Cells(i + 2, "B").Value = ""
+    Next i
+
+    ws.Columns("A:B").AutoFit
+End Sub
+
 Public Sub EnsureProjectInfoSheet()
     Dim ws As Worksheet
     Dim tbl As Variant
